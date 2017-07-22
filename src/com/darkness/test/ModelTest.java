@@ -1,6 +1,9 @@
 package com.darkness.test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -8,7 +11,6 @@ import org.junit.Test;
 import com.darkness.model.Model;
 
 public class ModelTest {
-
 	private Model mModel;
 
 	@Before
@@ -34,14 +36,14 @@ public class ModelTest {
 		assertFalse(mModel.checkLogin("nguyenvantra", "abcabc"));
 	}
 
-	@Test
+	@Test(expected = NullPointerException.class)
 	public void testAddArrayIndex() {
 		int[] arr = { 1, 2, 3, 4 };
+		//int[] arr = null;
 
 		int[] expectedArrayValue = { 3, 4, 5, 6 };
 		int[] actualArrayValue = mModel.addArrayIndex(arr);
 
 		assertArrayEquals(expectedArrayValue, actualArrayValue);
 	}
-
 }
