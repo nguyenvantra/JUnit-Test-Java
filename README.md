@@ -54,17 +54,25 @@ public class TestDemo {
 	}
 }
 
+```
+
 Console
 ```
 BeforeClass
+
 Before
+
 Test 1 run
+
 After
+
 Before
+
 Test 2 run
+
 After
+
 AfterClass
-```
 ```
 
 
