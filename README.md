@@ -11,7 +11,7 @@ JUnit tránh cho người lập trình phải làm đi làm lại những việc
 ## Annotation trong JUnit
 Tên Anotation | Ý nghĩa
 ------------ | -------------
-```java @RunWith``` | Xác định test runner
+```<span style="color:red">@RunWith</span>``` | Xác định test runner
 
 
 
