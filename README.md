@@ -158,6 +158,50 @@ public class ModelTest {
 Kết quả thu được:
 <img src="image/imgtest.png"/>
 
+## Bắt ngoại lệ cho method test
+Chuyện gì xảy ra khi chúng ta test method **addArrayIndex** như thế này:
+```java
+@Test
+public void testAddArrayIndex() {
+	int[] arr = null;
+
+	int[] expectedArrayValue = { 3, 4, 5, 6 };
+	int[] actualArrayValue = mModel.addArrayIndex(arr);
+
+	assertArrayEquals(expectedArrayValue, actualArrayValue);
+}
+```
+Khi run test thì Eclipse sẻ thông báo lỗi với tên là **java.lang.NullPointerException** để khắc phục những ngoại lệ xảy ra khi viết test chúng ta có thể làm như sau.
+```java
+@Test(expected = NullPointerException.class)
+public void testAddArrayIndex() {
+	int[] arr = null;
+
+	int[] expectedArrayValue = { 3, 4, 5, 6 };
+	int[] actualArrayValue = mModel.addArrayIndex(arr);
+
+	assertArrayEquals(expectedArrayValue, actualArrayValue);
+}
+```
+
+## JUnit test suites
+Nếu bạn có nhiều **class test**, bạn có thể kết hợp chúng thành **test suite**(bộ kiểm tra).
+Một **test suites** có thể chứa **1 test suite** khác.
+
+```java
+@SuiteClasses({
+	FirstClassTest.class,
+	SecondClassTest.class
+})
+public class AllTests {
+	//do something test
+}
+```
+
+## Parameterized test 
+
+
+
 
 
 
