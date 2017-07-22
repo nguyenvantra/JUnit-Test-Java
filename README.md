@@ -18,7 +18,8 @@ Tên Annotation | Ý nghĩa
 ```@After``` | Với annotation này thì method sẽ được thực thi sau mỗi phương thức **test**. ```public void```
 ```@AfterClass``` | Với annotation này thì method sẻ chỉ **chạy 1 lần** và **sau** tất cả method của class. ```public static void```
 ```@Test``` | Đánh dấu một method dùng để **test**.
-```@Test(expected = ArithmeticException.class)``` | Bắt ngoại lệ
+```@Test(expected = ArithmeticException.class)``` | Bắt ngoại lệ cho method **test**
+```@Test(timeout=time)``` | Xác định thời gian thực thi cho method **test**
 
 Example:
 ```java
@@ -74,5 +75,9 @@ Các method dạng **assertXXX()**
 
 Tên method | Ý nghĩa
 ------------ | -------------
+```java
+void assertEquals(object expected, object actual) 
+```
+
 
 
