@@ -83,8 +83,83 @@ Tên method | Ý nghĩa
 ```void assertSame(boolean condition)``` | So sánh địa chỉ vùng nhớ của 2 tham chiếu đối tượng bằng cách sử dụng toán tử ==. Test sẽ được chấp nhận nếu cả 2 đều tham chiếu đến cùng một đối tượng.
 ```void assertNotSame(boolean condition)``` | So sánh địa chỉ vùng nhớ của 2 tham chiếu đối tượng bằng cách sử dụng toán tử ==. Test sẽ được chấp nhận nếu cả 2 đều tham chiếu đến các đối tượng khác nhau
 ```void assertArrayEquals(expectedArray, resultArray)``` | So sánh 2 mảng để kiểm tra bằng nhau. Test sẽ được chấp nhận nếu các giá trị bằng nhau.
-
 ```void fail()``` | Method này làm cho test hiện tại thất bại, method này thường được sử dụng khi xử lý các ngoại lệ.
+
+Example:
+Class Model gồm những method để thực hiện unit test.
+```java
+public class Model {
+	public int addNumber(int a, int b) {
+		return a + b;
+	}
+
+	public boolean checkLogin(String username, String password) {
+		boolean check = false;
+		if ("darkness".equals(username) && "123456".equals(password))
+			check = true;
+		return check;
+	}
+
+	public int[] addArrayIndex(int[] arr) {
+		int[] newArray = new int[arr.length];
+
+		for (int i = 0; i < arr.length; i++) {
+			newArray[i] = arr[i] + 2;
+		}
+
+		return newArray;
+	}
+}
+```
+
+Tiếp theo tạo 1 **JUnit Test Case** có tên **ModelTest**. Tại **Model Test** ta sẻ sử dụng các annotation của JUnit cung cấp để viết các method sử dụng cho việc test các method trong class Model.
+
+```java
+public class ModelTest {
+
+	private Model mModel;
+
+	@Before
+	public void setUp() {
+		mModel = new Model();
+	}
+
+	@Test
+	public void testAddNumber() {
+		int expectedValue = 5;
+		int actualValue = mModel.addNumber(2, 3);
+		assertEquals(expectedValue, actualValue);
+	}
+
+	@Test
+	public void testCheckLogin() {
+		boolean expectedValue = true;
+		boolean actualValue = mModel.checkLogin("darkness", "123456");
+
+		assertEquals(expectedValue, actualValue);
+
+		assertTrue(mModel.checkLogin("darkness", "123456"));
+		assertFalse(mModel.checkLogin("nguyenvantra", "abcabc"));
+	}
+
+	@Test
+	public void testAddArrayIndex() {
+		int[] arr = { 1, 2, 3, 4 };
+
+		int[] expectedArrayValue = { 3, 4, 5, 6 };
+		int[] actualArrayValue = mModel.addArrayIndex(arr);
+
+		assertArrayEquals(expectedArrayValue, actualArrayValue);
+	}
+
+}
+```
+
+Kết quả thu được:
+<img src="image/imgtest.png"/>
+
+
+
 
 
 
