@@ -71,11 +71,21 @@ AfterClass
 
 
 ## Các method trong JUnit
-Các method dạng **assertXXX()**
+Các method dạng **assertXXX()** có trong lớp **junit.framework.Assert**.
 
 Tên method | Ý nghĩa
 ------------ | -------------
 ```void assertEquals(object expected, object actual)``` | So sánh 2 giá trị để kiểm tra bằng nhau. Test sẽ được chấp nhận nếu các giá trị bằng nhau.
+```void assertFalse(boolean condition)``` | Đánh giá biểu thức logic. Test sẽ được chấp nhận nếu biểu thức sai.
+```void assertNotNull(Object object)``` | So sánh tham chiếu của một đối tượng với null. Test sẽ được chấp nhận nếu tham chiếu đối tượng khác null.
+```void assertNull(Object object)``` | So sánh tham chiếu của một đối tượng với giá trị null. Test sẽ được chấp nhận nếu tham chiếu là null.
+```void assertTrue(boolean condition)``` | Đánh giá biểu thức logic. Test sẽ được chấp nhận nếu biểu thức đúng
+```void assertSame(boolean condition)``` | So sánh địa chỉ vùng nhớ của 2 tham chiếu đối tượng bằng cách sử dụng toán tử ==. Test sẽ được chấp nhận nếu cả 2 đều tham chiếu đến cùng một đối tượng.
+```void assertNotSame(boolean condition)``` | So sánh địa chỉ vùng nhớ của 2 tham chiếu đối tượng bằng cách sử dụng toán tử ==. Test sẽ được chấp nhận nếu cả 2 đều tham chiếu đến các đối tượng khác nhau
+```void assertArrayEquals(expectedArray, resultArray)``` | So sánh 2 mảng để kiểm tra bằng nhau. Test sẽ được chấp nhận nếu các giá trị bằng nhau.
+
+```void fail()``` | Method này làm cho test hiện tại thất bại, method này thường được sử dụng khi xử lý các ngoại lệ.
+
 
 
 
