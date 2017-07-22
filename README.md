@@ -77,7 +77,8 @@ Tên method | Ý nghĩa
 ------------ | -------------
 ```java
 void assertEquals(object expected, object actual) 
-``` | So sánh 2 giá trị để kiểm tra bằng nhau. Test sẽ được chấp nhận nếu các giá trị bằng nhau.
+```
+| So sánh 2 giá trị để kiểm tra bằng nhau. Test sẽ được chấp nhận nếu các giá trị bằng nhau.
 
 
 
