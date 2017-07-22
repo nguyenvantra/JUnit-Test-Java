@@ -11,9 +11,9 @@ JUnit tránh cho người lập trình phải làm đi làm lại những việc
 ## Annotation trong JUnit
 Tên Annotation | Ý nghĩa
 ------------ | -------------
-```@RunWith``` | Xác định test runner
-```@Suite``` | Thực thi nhiều test case cùng một lúc
-```@Before``` | Với annotation này thì method sẻ được thực thi trước mỗi method **test**. ```<font color='red'>public void</font>```
+```@RunWith``` | Xác định **test runner**
+```@Suite``` | Thực thi nhiều **test case** cùng một lúc
+```@Before``` | Với annotation này thì method sẻ được thực thi trước mỗi method **test**. ```public void```
 ```@BeforeClass``` | Với annotation này thì method sẻ chỉ **chạy 1 lần** và **trước** tất cả method của class (EX: connect database). ```public static void```
 ```@After``` | Với annotation này thì method sẽ được thực thi sau mỗi phương thức **test**. ```public void```
 ```@AfterClass``` | Với annotation này thì method sẻ chỉ **chạy 1 lần** và **sau** tất cả method của class. ```public static void```
@@ -22,10 +22,10 @@ Tên Annotation | Ý nghĩa
 
 
 
-## Các phương thức trong JUnit
-Các phương thức dạng **assertXXX()**
+## Các method trong JUnit
+Các method dạng **assertXXX()**
 
-Agument list | Arrow tocken | Body
------------- | ------------- | -------------
+Tên method | Ý nghĩa
+------------ | -------------
 
 
