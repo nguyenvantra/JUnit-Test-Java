@@ -9,9 +9,12 @@ Trong JUnit có các Test Case là các lớp của Java, các lớp này bao g�
 JUnit tránh cho người lập trình phải làm đi làm lại những việc kiểm thử nhàm chán bằng cách tách biệt mã kiểm thử ra khỏi mã chương trình, đồng thời tự động hóa việc tổ chức và thi hành các bộ số liệu kiểm thử.
 
 ## Annotation trong JUnit
-Tên Anotation | Ý nghĩa
+Tên Annotation | Ý nghĩa
 ------------ | -------------
-```<span style="color:red">@RunWith</span>``` | Xác định test runner
+```@RunWith``` | Xác định test runner
+```@Suite``` | Thực thi nhiều test case cùng một lúc
+```@Before``` | Với annotation này phương thức sẻ được thực thi trước mỗi phươn thức **Test** ```public void```
+```@BeforeClass``` | 
 
 
 
