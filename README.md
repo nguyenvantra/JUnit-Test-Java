@@ -13,8 +13,12 @@ Tên Annotation | Ý nghĩa
 ------------ | -------------
 ```@RunWith``` | Xác định test runner
 ```@Suite``` | Thực thi nhiều test case cùng một lúc
-```@Before``` | Với annotation này phương thức sẻ được thực thi trước mỗi phươn thức **Test** ```public void```
-```@BeforeClass``` | 
+```@Before``` | Với annotation này thì method sẻ được thực thi trước mỗi method **test**. ```public void```
+```@BeforeClass``` | Với annotation này thì method sẻ chỉ **chạy 1 lần** và **trước** tất cả method của class (EX: connect database)```public static void```
+```@After``` | Với annotation này thì method sẽ được thực thi sau mỗi phương thức **test**. ```public void```
+```@AfterClass``` | Với annotation này thì method sẻ chỉ **chạy 1 lần** và **sau** tất cả method của class```public static void```
+```@Test``` | Đánh dấu một method dùng để **test**.
+```@Test(expected = ArithmeticException.class)``` | Bắt ngoại lệ
 
 
 
