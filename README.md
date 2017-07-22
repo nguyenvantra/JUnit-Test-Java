@@ -20,6 +20,52 @@ Tên Annotation | Ý nghĩa
 ```@Test``` | Đánh dấu một method dùng để **test**.
 ```@Test(expected = ArithmeticException.class)``` | Bắt ngoại lệ
 
+Example:
+```java
+public class TestDemo {
+	@Before
+	public void before(){
+		System.out.println("Before");
+	}
+	
+	@After
+	public void after(){
+		System.out.println("After");
+	}
+	
+	@Test
+	public void test1(){
+		System.out.println("Test 1 run");
+	}
+	
+	@Test
+	public void test2(){
+		System.out.println("Test 2 run");
+	}
+	
+	@BeforeClass
+	public static void beforeClass(){
+		System.out.println("BeforeClass");
+	}
+	
+	@AfterClass
+	public static void afterClass(){
+		System.out.println("AfterClass");
+	}
+}
+
+Console
+```
+BeforeClass
+Before
+Test 1 run
+After
+Before
+Test 2 run
+After
+AfterClass
+```
+```
 
 
 ## Các method trong JUnit
